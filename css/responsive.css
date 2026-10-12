@@ -1,0 +1,171 @@
+/* ==========================================================================
+   LUMINA CREATIVE STUDIO - RESPONSIVE STYLESHEET
+   Mobile navigation animations, breakpoints & adaptive layouts
+   ========================================================================== */
+
+/* --- Tablet Breakpoint (max-width: 992px) --- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- Mobile Breakpoint (max-width: 768px) --- */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 68px;
+  }
+
+  .section {
+    padding: 3.75rem 0;
+  }
+
+  /* Hide Desktop Nav & Show Hamburger */
+  .nav-menu {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Mobile Drawer Smooth Animation */
+  .mobile-nav-drawer {
+    /* Using transform & opacity for 60fps smooth animation */
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.35s ease;
+  }
+
+  .mobile-nav-drawer.is-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Staggered link entry animation inside mobile drawer */
+  .mobile-nav-drawer.is-active .mobile-nav-link {
+    animation: slideInNavItem 0.4s ease forwards;
+  }
+
+  .mobile-nav-drawer.is-active .mobile-nav-link:nth-child(1) { animation-delay: 0.05s; }
+  .mobile-nav-drawer.is-active .mobile-nav-link:nth-child(2) { animation-delay: 0.1s; }
+  .mobile-nav-drawer.is-active .mobile-nav-link:nth-child(3) { animation-delay: 0.15s; }
+
+  @keyframes slideInNavItem {
+    from {
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hero-floating-badge.badge-top {
+    right: 0;
+    top: -0.75rem;
+  }
+
+  .hero-floating-badge.badge-bottom {
+    left: 0;
+    bottom: -0.75rem;
+  }
+
+  .cta-banner {
+    padding: 3rem 1.75rem;
+  }
+
+  .form-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+}
+
+/* --- Small Mobile Breakpoint (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .features-grid,
+  .project-grid,
+  .values-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .newsletter-box {
+    flex-direction: column;
+  }
+}

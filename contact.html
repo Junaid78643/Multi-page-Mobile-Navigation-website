@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Lumina Creative Studio - Get in touch with our team for your next web project, brand system, or digital product inquiry.">
+  <title>Lumina Creative Studio | Contact Us</title>
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('lumina_theme_preference');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Lumina Creative Studio Home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </span>
+        <span>Lumina<span class="gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Header Actions (Theme Toggle & CTA) -->
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">
+        <span>Home</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+      <a href="about.html" class="mobile-nav-link">
+        <span>About</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+      <a href="contact.html" class="mobile-nav-link active">
+        <span>Contact</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+    <div class="mobile-nav-actions">
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Contact Header / Intro -->
+    <section class="section-sm" style="padding-top: 3.5rem;">
+      <div class="container text-center">
+        <div class="section-badge">Get in Touch</div>
+        <h1 class="section-title">Let's Build Something <span class="gradient-text">Exceptional.</span></h1>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">
+          Have a project in mind, an inquiry, or just want to explore possibilities? Tell us about your goals below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section: Info Cards & Validated Form -->
+    <section class="section" style="padding-top: 1.5rem;">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left Column: Direct Contact Info Panel -->
+          <div class="contact-info-panel">
+            <div class="contact-info-card">
+              <h2 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Direct Information</h2>
+
+              <!-- Item 1: Email -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="info-title">Email Us</div>
+                  <div class="info-value">hello@luminastudio.dev</div>
+                  <div class="info-sub">Average response: under 24 hours</div>
+                </div>
+              </div>
+
+              <!-- Item 2: Phone -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="info-title">Call Us</div>
+                  <div class="info-value">+1 (555) 349-8200</div>
+                  <div class="info-sub">Mon – Fri, 9am – 6pm EST</div>
+                </div>
+              </div>
+
+              <!-- Item 3: Studio Location -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="info-title">Our Studio</div>
+                  <div class="info-value">450 Innovation Way, Suite 800</div>
+                  <div class="info-sub">Boston, MA 02110, USA</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Studio Guarantee Card -->
+            <div class="contact-info-card" style="background: var(--bg-tertiary);">
+              <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                What happens next?
+              </h3>
+              <p style="font-size: 0.885rem; color: var(--text-secondary); line-height: 1.6;">
+                1. We review your requirements within 1 business day.<br>
+                2. We schedule a brief 20-min intro call if it feels like a fit.<br>
+                3. We send a clear project roadmap & transparent estimate.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form & Success Card -->
+          <div class="form-card">
+            
+            <!-- Success Notification Card (Shown via JS upon valid submission) -->
+            <div class="form-success-card" id="formSuccessCard" tabindex="-1" role="alert" aria-live="polite">
+              <div class="success-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h2 class="success-title">Message Received!</h2>
+              <p class="success-desc">
+                Thank you, <strong id="successUserName" style="color: var(--text-primary);">Friend</strong>! Your message has been received by our lead team. We will review your project details and get back to you within 24 hours.
+              </p>
+              <button type="button" class="btn btn-primary" id="resetSuccessBtn">
+                Send Another Message
+              </button>
+            </div>
+
+            <!-- The Validated Form -->
+            <form id="contactForm" novalidate aria-label="Contact inquiry form">
+              <div class="form-header">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the fields below. We will never share or sell your contact information.</p>
+              </div>
+
+              <!-- Full Name Field -->
+              <div class="form-group" id="groupFullName">
+                <label for="fullName" class="form-label">
+                  <span>Full Name <span class="label-required" aria-hidden="true">*</span></span>
+                  <span style="font-size: 0.775rem; color: var(--text-muted); font-weight: normal;">Min 3 letters</span>
+                </label>
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    class="form-input"
+                    placeholder="e.g. Alex Morgan"
+                    required
+                    autocomplete="name"
+                    aria-describedby="fullNameError"
+                  >
+                </div>
+                <div class="field-error-msg" id="fullNameError" role="alert">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-text">Please enter your full name.</span>
+                </div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group" id="groupEmail">
+                <label for="email" class="form-label">
+                  <span>Email Address <span class="label-required" aria-hidden="true">*</span></span>
+                  <span style="font-size: 0.775rem; color: var(--text-muted); font-weight: normal;">Valid email format</span>
+                </label>
+                <div class="input-wrapper">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="name@domain.com"
+                    required
+                    autocomplete="email"
+                    aria-describedby="emailError"
+                  >
+                </div>
+                <div class="field-error-msg" id="emailError" role="alert">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-text">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <!-- Project Type / Subject Field -->
+              <div class="form-group" id="groupSubject">
+                <label for="subject" class="form-label">
+                  <span>Project Type / Subject <span class="label-required" aria-hidden="true">*</span></span>
+                </label>
+                <div class="input-wrapper">
+                  <select id="subject" name="subject" class="form-select" required aria-describedby="subjectError">
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="web-development">Custom Website / Web App</option>
+                    <option value="ui-ux-design">UI/UX & Product Design</option>
+                    <option value="brand-identity">Brand & Visual Identity System</option>
+                    <option value="audit-performance">Performance & SEO Audit</option>
+                    <option value="general-inquiry">General Inquiry / Partnership</option>
+                  </select>
+                </div>
+                <div class="field-error-msg" id="subjectError" role="alert">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-text">Please select a project type.</span>
+                </div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group" id="groupMessage">
+                <label for="message" class="form-label">
+                  <span>Project Details / Message <span class="label-required" aria-hidden="true">*</span></span>
+                  <span id="messageMinNotice" style="font-size: 0.775rem; color: var(--text-muted); font-weight: normal;">(Min 15 chars)</span>
+                </label>
+                <div class="input-wrapper">
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-textarea"
+                    placeholder="Tell us about your project timeline, goals, and any specific ideas..."
+                    maxlength="500"
+                    required
+                    aria-describedby="messageError messageCharCount"
+                  ></textarea>
+                </div>
+                <div class="char-counter-wrapper">
+                  <div class="field-error-msg" id="messageError" role="alert" style="margin-top: 0;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-text">Message must be at least 15 characters long.</span>
+                  </div>
+                  <span class="char-counter" id="messageCharCount">0 / 500</span>
+                </div>
+              </div>
+
+              <!-- Privacy Policy Agreement Checkbox -->
+              <div class="form-group" id="groupConsent" style="margin-bottom: 2rem;">
+                <label class="checkbox-label" for="consent">
+                  <input type="checkbox" id="consent" name="consent" class="checkbox-input" required aria-describedby="consentError">
+                  <span class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span>
+                    I agree to the privacy policy and consent to Lumina contacting me regarding this inquiry.
+                  </span>
+                </label>
+                <div class="field-error-msg" id="consentError" role="alert" style="padding-left: 2rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-text">You must agree to the privacy policy.</span>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">Common Questions</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Quick answers to common questions about working with our studio.</p>
+        </div>
+
+        <div class="faq-list">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What is your typical project timeline?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-content">
+                A typical multi-page website or brand identity system generally takes between 3 to 6 weeks from strategy to deployment. For larger custom web applications, timelines range between 8 to 12 weeks with weekly sprint demos.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Do you work with startups as well as established enterprises?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-content">
+                Yes! We collaborate with ambitious seed-stage founders preparing for launch as well as established scaling brands revamping their digital platforms.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>How do you handle maintenance and post-launch support?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-content">
+                Every project comes with 30 days of complimentary post-launch support and training. After that, we offer flexible monthly retainer packages covering performance audits, feature enhancements, and continuous design updates.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>What technologies do you specialize in?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-content">
+                We focus on modern semantic HTML5, clean CSS3/PostCSS/Tailwind, vanilla JavaScript, React, Next.js, Node.js, and headless CMS platforms. We prioritize speed, accessibility, and zero unnecessary bloat.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand column -->
+        <div>
+          <a href="index.html" class="brand-logo" aria-label="Lumina Creative Studio Home">
+            <span class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </span>
+            <span>Lumina<span class="gradient-text">.</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            A digital studio dedicated to crafting thoughtful websites, scalable design systems, and engaging user experiences.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Pages</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-column-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">Web Design</a></li>
+            <li><a href="about.html" class="footer-link">UI/UX Systems</a></li>
+            <li><a href="about.html" class="footer-link">Frontend Code</a></li>
+            <li><a href="about.html" class="footer-link">Performance</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="footer-column-title">Stay Updated</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+            Subscribe to our quarterly journal on design, code, and digital craft.
+          </p>
+          <form class="newsletter-box" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email for newsletter">
+            <button type="submit" class="btn btn-primary" style="padding: 0.7rem 1.1rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Lumina Creative Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="contact.html" class="footer-link">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" aria-label="Scroll back to top of page" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumina Creative Studio - A premier digital studio crafting inspiring, responsive websites, brand systems, and high-performance digital products.">
+  <title>Lumina Creative Studio | Home</title>
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('lumina_theme_preference');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Lumina Creative Studio Home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </span>
+        <span>Lumina<span class="gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions (Theme Toggle & CTA) -->
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <!-- Sun Icon (shown in dark mode to switch to light) -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode to switch to dark) -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary btn-sm" style="display: none; @media(min-width: 640px){display: inline-flex;}">Get in Touch</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">
+        <span>Home</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+      <a href="about.html" class="mobile-nav-link">
+        <span>About</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+      <a href="contact.html" class="mobile-nav-link">
+        <span>Contact</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+    <div class="mobile-nav-actions">
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Creative Digital Studio
+          </div>
+          <h1 class="hero-title">
+            Crafting Digital Experiences That <span class="gradient-text">Inspire & Perform.</span>
+          </h1>
+          <p class="hero-subtitle">
+            We partner with forward-thinking brands to design modern websites, cohesive design systems, and digital products that elevate your brand and drive results.
+          </p>
+          <div class="hero-buttons">
+            <a href="contact.html" class="btn btn-primary btn-lg">
+              <span>Start Your Project</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary btn-lg">Learn About Us</a>
+          </div>
+
+          <!-- Proof Metrics -->
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <span class="stat-number">140+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="stat-number">99.4%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Years of Craft</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Mockup Showcase -->
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-graphic-box">
+              <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></span>
+              </div>
+              <div style="background: rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1.5rem; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="height: 12px; width: 45%; background: var(--primary); border-radius: 6px; margin-bottom: 10px;"></div>
+                <div style="height: 8px; width: 85%; background: var(--text-muted); opacity: 0.3; border-radius: 4px; margin-bottom: 6px;"></div>
+                <div style="height: 8px; width: 65%; background: var(--text-muted); opacity: 0.3; border-radius: 4px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">⚡ Modern Architecture</span>
+                <span style="font-size: 0.75rem; color: var(--success); font-weight: 700; background: var(--success-bg); padding: 2px 8px; border-radius: 99px;">100% Responsive</span>
+              </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="hero-floating-badge badge-top">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span>Pixel Perfect Design</span>
+            </div>
+
+            <div class="hero-floating-badge badge-bottom">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line></svg>
+              </div>
+              <span>Fast & Accessible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Pillars Section -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">What We Do</div>
+          <h2 class="section-title">End-to-End Capabilities for the Modern Web</h2>
+          <p class="section-desc">From initial brand exploration to fluid multi-device deployment, we bring thoughtful attention to every interaction.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">UI/UX & Product Design</h3>
+            <p class="feature-desc">Human-centered user interfaces built with intuitive user journeys, accessibility, and modern aesthetic balance.</p>
+            <a href="about.html" class="feature-link">
+              <span>Explore design approach</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">Frontend Engineering</h3>
+            <p class="feature-desc">Performant, responsive code written with modern standards, snappy micro-interactions, and robust cross-browser support.</p>
+            <a href="about.html" class="feature-link">
+              <span>View technical stack</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Brand & Visual Identity</h3>
+            <p class="feature-desc">Logos, visual systems, and typography rules crafted to tell your unique brand story across all customer touchpoints.</p>
+            <a href="contact.html" class="feature-link">
+              <span>Inquire about branding</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 6 12 12 16 14"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Speed & SEO Optimization</h3>
+            <p class="feature-desc">Blazing-fast load times, lightweight assets, and semantic markup primed for discoverability and high conversion.</p>
+            <a href="contact.html" class="feature-link">
+              <span>Boost your performance</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Showcase Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">Recent Case Studies</div>
+          <h2 class="section-title">Selected Works</h2>
+          <p class="section-desc">A glimpse into recent design systems and web platforms crafted by our studio.</p>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-image-box">
+              <span class="project-tag">Fintech</span>
+              <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="60" rx="8" fill="var(--bg-card)"/>
+                <path d="M10 45 L35 25 L60 38 L90 12" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="90" cy="12" r="3.5" fill="var(--secondary)"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Aura Financial Analytics</h3>
+              <p class="project-desc">A high-velocity wealth management dashboard featuring real-time portfolio tracking and clean data visualizations.</p>
+              <div class="project-footer">
+                <span>UI/UX & Web App</span>
+                <span style="color: var(--primary); font-weight: 600;">View Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-image-box">
+              <span class="project-tag">E-Commerce</span>
+              <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="60" rx="8" fill="var(--bg-card)"/>
+                <circle cx="35" cy="30" r="16" stroke="var(--secondary)" stroke-width="2.5"/>
+                <circle cx="65" cy="30" r="16" stroke="var(--primary)" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Botanica Eco Living</h3>
+              <p class="project-desc">Direct-to-consumer sustainable home goods store with a frictionless checkout and mobile-first product stories.</p>
+              <div class="project-footer">
+                <span>Shopify & Frontend</span>
+                <span style="color: var(--primary); font-weight: 600;">View Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-image-box">
+              <span class="project-tag">SaaS Platform</span>
+              <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="60" rx="8" fill="var(--bg-card)"/>
+                <rect x="20" y="15" width="25" height="30" rx="4" stroke="var(--primary)" stroke-width="2"/>
+                <rect x="55" y="15" width="25" height="30" rx="4" stroke="var(--accent)" stroke-width="2"/>
+                <line x1="45" y1="30" x2="55" y2="30" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Synthetix Workflow AI</h3>
+              <p class="project-desc">Collaboration platform allowing cross-functional engineering teams to automate documentation and code reviews.</p>
+              <div class="project-footer">
+                <span>Design System & Brand</span>
+                <span style="color: var(--primary); font-weight: 600;">View Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 class="section-title">Ready to Elevate Your Digital Presence?</h2>
+          <p class="section-desc">Whether launching a brand-new concept or elevating an existing product, our team is ready to help you succeed.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-white btn-lg">Get in Touch With Us</a>
+            <a href="about.html" class="btn btn-glass btn-lg">Our Story & Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand column -->
+        <div>
+          <a href="index.html" class="brand-logo" aria-label="Lumina Creative Studio Home">
+            <span class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </span>
+            <span>Lumina<span class="gradient-text">.</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            A digital studio dedicated to crafting thoughtful websites, scalable design systems, and engaging user experiences.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Pages</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-column-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">Web Design</a></li>
+            <li><a href="about.html" class="footer-link">UI/UX Systems</a></li>
+            <li><a href="about.html" class="footer-link">Frontend Code</a></li>
+            <li><a href="about.html" class="footer-link">Performance</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="footer-column-title">Stay Updated</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+            Subscribe to our quarterly journal on design, code, and digital craft.
+          </p>
+          <form class="newsletter-box" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email for newsletter">
+            <button type="submit" class="btn btn-primary" style="padding: 0.7rem 1.1rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Lumina Creative Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="contact.html" class="footer-link">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Simulator Floating Shortcut -->
+  <a href="mobile.html" class="mobile-sim-badge" title="Preview Mobile View" aria-label="Open mobile device simulator">
+    <span>📱</span>
+    <span>Mobile View</span>
+  </a>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" aria-label="Scroll back to top of page" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

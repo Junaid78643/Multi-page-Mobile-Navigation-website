@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Creative Studio - Mobile Device Simulator</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0f172a 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* Top Control Toolbar */
+    .simulator-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 1.75rem;
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1.25rem;
+      border-radius: 99px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .toolbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .toolbar-badge {
+      background: #4f46e5;
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .device-switcher {
+      display: flex;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 99px;
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .switch-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 0.45rem 0.9rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .switch-btn.active {
+      background: #4f46e5;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      padding: 0.45rem 0.9rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Smartphone Frame */
+    .phone-container {
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .phone-frame {
+      width: 390px;
+      height: 810px;
+      background: #090d16;
+      border-radius: 50px;
+      box-shadow: 
+        0 0 0 10px #1e293b,
+        0 0 0 12px #334155,
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 60px rgba(79, 70, 229, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.35s ease;
+    }
+
+    /* Dynamic Island / Camera Notch */
+    .phone-island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 26px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+      pointer-events: none;
+    }
+
+    .phone-camera {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 1.5px solid #1e293b;
+    }
+
+    /* Screen iFrame */
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #ffffff;
+      flex-grow: 1;
+      padding-top: 10px;
+    }
+
+    /* Home Indicator bar at bottom */
+    .home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 99px;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    /* Hints Section */
+    .simulator-hint {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    .simulator-hint strong {
+      color: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Controls Header -->
+  <header class="simulator-toolbar">
+    <div class="toolbar-brand">
+      <span>📱 Mobile View Simulator</span>
+      <span class="toolbar-badge">Active</span>
+    </div>
+
+    <!-- Device Sizing Switcher -->
+    <div class="device-switcher">
+      <button class="switch-btn active" onclick="setDevice('iphone')">iPhone (390px)</button>
+      <button class="switch-btn" onclick="setDevice('galaxy')">Galaxy (360px)</button>
+      <button class="switch-btn" onclick="setDevice('tablet')">Tablet (600px)</button>
+    </div>
+
+    <!-- Quick Page Navigators -->
+    <div class="toolbar-actions">
+      <a href="index.html" target="phoneIframe" class="action-btn">Home</a>
+      <a href="about.html" target="phoneIframe" class="action-btn">About</a>
+      <a href="contact.html" target="phoneIframe" class="action-btn">Contact</a>
+      <a href="index.html" class="action-btn" style="background: #4f46e5; border-color: #4f46e5;">Desktop Fullscreen ↗</a>
+    </div>
+  </header>
+
+  <!-- Realistic Smartphone Frame -->
+  <main class="phone-container">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="phone-island">
+        <div class="phone-camera"></div>
+      </div>
+
+      <iframe src="index.html" name="phoneIframe" id="phoneIframe" class="phone-screen" title="Mobile Website Preview"></iframe>
+
+      <div class="home-indicator"></div>
+    </div>
+  </main>
+
+  <p class="simulator-hint">
+    💡 <strong>Tip:</strong> Top-right par <strong>Hamburger Menu (3 lines)</strong> ko tap karke smooth animation aur Contact Page form validation test karein!
+  </p>
+
+  <script>
+    function setDevice(type) {
+      const frame = document.getElementById('phoneFrame');
+      const buttons = document.querySelectorAll('.switch-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      if (type === 'iphone') {
+        frame.style.width = '390px';
+        frame.style.height = '810px';
+        frame.style.borderRadius = '50px';
+        buttons[0].classList.add('active');
+      } else if (type === 'galaxy') {
+        frame.style.width = '360px';
+        frame.style.height = '780px';
+        frame.style.borderRadius = '40px';
+        buttons[1].classList.add('active');
+      } else if (type === 'tablet') {
+        frame.style.width = '600px';
+        frame.style.height = '850px';
+        frame.style.borderRadius = '32px';
+        buttons[2].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
